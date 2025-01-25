@@ -29,4 +29,4 @@ RUN echo "PYTHONPATH is $PYTHONPATH"
 WORKDIR /app/src
 
 # Запускаем тесты, миграции и сам сервер
-CMD ["sh", "-c", "python manage.py makemigrations && python manage.py migrate && coverage run manage.py test && coverage report && python manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py makemigrations && python manage.py migrate && coverage run manage.py test && coverage report && python manage.py seed_data && python manage.py runserver 0.0.0.0:8000"]
